@@ -1,4 +1,4 @@
-#  vim: set fileencoding=utf-8 filetype=ruby ts=2 : 
+#  vim: set fileencoding=utf-8 filetype=ruby ts=2 :
 
 module SwfRuby
   class ReplaceTarget
@@ -132,11 +132,11 @@ module SwfRuby
 
     # 指定したAS変数名に対するAsVarReplaceTargetのリストを生成する
     def self.build_by_var_name(swf_dumper, var_name)
+      sd = SpriteDumper.new
       as_var_replace_targets = []
       swf_dumper.tags.each_with_index do |t, i|
         if t.code == 39
           # DefineSprite
-          sd = SpriteDumper.new
           sd.dump(t)
           sd.tags.each_with_index do |u, j|
             if u.code == 12
@@ -164,7 +164,7 @@ module SwfRuby
       if sprite_dumper
         do_action_offset = parent_sprite_offset + sprite_dumper.tags_addresses[do_action_index]
         dad.dump(swf_dumper.swf[do_action_offset, sprite_dumper.tags[do_action_index].length])
-      else 
+      else
         do_action_offset = swf_dumper.tags_addresses[do_action_index]
         dad.dump(swf_dumper.swf[do_action_offset, swf_dumper.tags[do_action_index].length])
       end
