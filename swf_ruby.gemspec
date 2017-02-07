@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "swf_ruby"
 
   s.add_dependency "bundler", ">= 1.0.0.rc.5"
-  s.add_dependency "rmagick", ">= 2.13.0"
+  s.add_dependency "rmagick", ">= 2.16.0"
 
   s.bindir             = 'bin'
   s.executables        = ['swf_dump', 'swf_jpeg_replace', 'swf_lossless_replace', 'swf_as_var_replace', 'swf_sprite_replace']
